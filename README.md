@@ -65,21 +65,24 @@ The following hardware-layer execution profile documents the structural eliminat
 
 The PIIKKIO-pir4MEPI CPU core topology consists of three tightly coupled, hardware-level execution blocks that function without traditional thread-scheduling microcode.
 
--------------------------------------------------------------------------
-
-|                        PIIKKIO-pir4MEPI CORE MESH                     |
-|                                                                       |
-|  +------------------------+             +--------------------------+  |
-|  |   U-ACP FRONT-END      |             |  ALGEBRAIC VALVE MATRIX  |  |
-|  |  Taxonomic AST Decoder | ----------> |   Branchless Selection   |  |
-|  +------------------------+             +--------------------------+  |
-|               |                                       |               |
-|               v                                       v               |
-|  +-----------------------------------------------------------------+  |
-|  |                SHARED STATE MATRIX (SSM) GRID                   |  |
-|  |      32-Bit Aligned Point-to-Point Physical Registry Window     |  |
-|  +-----------------------------------------------------------------+  |
--------------------------------------------------------------------------
+$$
+\begin{gathered}
+\texttt{-------------------------------------------------------------------------} \\
+\texttt{|                        PIIKKIO-pir4MEPI CORE MESH                     |} \\
+\texttt{|                                                                       |} \\
+\texttt{|  +------------------------+             +--------------------------+  |} \\
+\texttt{|  |   U-ACP FRONT-END      |             |  ALGEBRAIC VALVE MATRIX  |  |} \\
+\texttt{|  |  Taxonomic AST Decoder | ----------> |   Branchless Selection   |  |} \\
+\texttt{|  +------------------------+             +--------------------------+  |} \\
+\texttt{|               |                                       |               |} \\
+\texttt{|               v                                       v               |} \\
+\texttt{|  +-----------------------------------------------------------------+  |} \\
+\texttt{|  |                SHARED STATE MATRIX (SSM) GRID                   |  |} \\
+\texttt{|  |      32-Bit Aligned Point-to-Point Physical Registry Window     |  |} \\
+\texttt{|  +-----------------------------------------------------------------+  |} \\
+\texttt{-------------------------------------------------------------------------}
+\end{gathered}
+$$
 
 ### 3.1 The Taxonomic AST Front-End Decoder
 The instruction fetch-and-decode block does not utilize traditional instruction pipelining or speculative branch targets. Instead, incoming binary payloads are separated at the hardware gate level using the U-ACP front-end taxonomy:
